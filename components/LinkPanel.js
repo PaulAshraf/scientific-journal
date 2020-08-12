@@ -5,7 +5,8 @@ import { Button } from 'react-bootstrap'
 
 const LinkPanel = ({ id }) => {
 
-    const url = `http://localhost:3000/journal/${id}`
+    const base = 'https://scientific-journal.vercel.app'
+    const url = `${base}/journal/${id}`
     const href = `/journal/${id}`
 
     const copy = () => {
@@ -35,23 +36,29 @@ const LinkPanel = ({ id }) => {
 
 
     return (
-        <>
-            <ButtonWrapper><Link href={href}><Code>{url}</Code></Link></ButtonWrapper>{' '}
-            <ButtonWrapper><Button variant='outline-dark' size='sm' onClick={copy}>Copy</Button></ButtonWrapper>
-        </>
+        <Cont>
+            <ButtonWrapper><Link href={href}><Code>{id}</Code></Link></ButtonWrapper>{' '}
+            <ButtonWrapper><Button variant='outline-dark' size='sm' onClick={copy}>Copy Link</Button></ButtonWrapper>
+        </Cont>
     )
 }
 
 const Code = styled.code`
-    font-size: 1.5em;
+    font-size: 1.3em;
     cursor: pointer;
+    word-wrap: break-word;
 `
 
 const ButtonWrapper = styled.div`
-	margin: auto;
-    width: fit-content;
-    display: inline-block;
+    display: inline-block; 
     vertical-align: middle;
+    margin: auto; 
+    width: fit-content; 
+`
+
+const Cont = styled.div`
+    margin: auto; 
+    width: fit-content; 
 `
 
 export default LinkPanel

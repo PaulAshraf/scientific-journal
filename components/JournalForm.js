@@ -97,7 +97,7 @@ const JournalForm = () => {
 			</Form>
 			<br />
 			<br />
-			{pressed ? loading ? <Spinner animation="border" role="status" /> : <LinkPanel id={id} /> : <></>}
+			{pressed ? loading ? <ButtonWrapper><Spinner animation="border" role="status" /></ButtonWrapper> : <LinkPanel id={id} /> : <></>}
 		</Wrapper>
 	)
 }
