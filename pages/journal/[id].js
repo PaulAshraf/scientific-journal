@@ -11,7 +11,7 @@ const Journal = ({ data }) => {
 
     const getImgUrl = (data) => {
         const type = data.type
-        const base = 'http://localhost:3000'
+        const base = 'https://scientific-journal.vercel.app'
 
         switch (type) {
             case 'nature':
@@ -32,7 +32,7 @@ const Journal = ({ data }) => {
                 <meta name="twitter:creator" content={data.name} />
                 <meta name="twitter:card" content="summary" />
                 <meta property="og:image" itemProp="image" content={getImgUrl(data)} />
-                <meta property="og:url" content='https://localhost:3000/' />
+                <meta property="og:url" content='https://scientific-journal.vercel.app' />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={data.description} />
                 <meta property="og:title" content={data.title} />
@@ -76,11 +76,12 @@ export async function getServerSideProps(context) {
 
     const id = context.params.id
 
-    const base = context.req.headers.referer.split('journal')[0]
+    // const base = context.req.headers.referer.split('journal')[0]
+    const base = 'https://scientific-journal.vercel.app/'
 
     let data = null
     try {
-        const res = await axios.get(`${base}api/journal/${id}`)
+        const res = await axios.get(`${base}/api/journal/${id}`)
         data = res.data
     }
     catch (err) {
