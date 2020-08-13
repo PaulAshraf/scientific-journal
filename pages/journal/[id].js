@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Button } from 'react-bootstrap'
 
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 const Journal = ({ data }) => {
 
@@ -47,6 +48,9 @@ const Journal = ({ data }) => {
             <Text>Create one for yourself by clicking below.</Text>
             <br />
             <ButtonWrapper><Link href='/'><Button variant='dark'>Create a Fake Journal →</Button></Link></ButtonWrapper>
+            <br />
+            <br />
+            <Footer />
         </>
     )
 }

@@ -1,8 +1,8 @@
 import Head from "next/head"
-import styled from 'styled-components'
 
 import JournalForm from '../components/JournalForm'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Home() {
 	return (
@@ -17,15 +17,8 @@ export default function Home() {
 				<JournalForm />
 			</main>
 
-			<Footer>2020 © Paul Ashraf</Footer>
+			<Footer />
 		</>
 	)
 }
 
-
-
-const Footer = styled.footer`
-	width: fit-content;
-	margin: auto;
-	margin-top: 2em;
-`
