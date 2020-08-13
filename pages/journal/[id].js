@@ -21,6 +21,8 @@ const Journal = ({ data }) => {
                 return base + '/ieee.png'
             case 'pubmed':
                 return base + '/pubmed.png'
+            case 'bbc':
+                return base + '/bbc.jpg'
             default:
                 return ''
         }

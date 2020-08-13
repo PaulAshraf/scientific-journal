@@ -12,6 +12,7 @@ const JournalForm = () => {
 		nature: false,
 		ieee: false,
 		pubmed: false,
+		bbc: false,
 	})
 
 	const [pressed, setPressed] = useState(false)
@@ -45,6 +46,7 @@ const JournalForm = () => {
 			nature: false,
 			ieee: false,
 			pubmed: false,
+			bbc: false,
 		}
 
 		switch (typeName) {
@@ -56,6 +58,9 @@ const JournalForm = () => {
 				break
 			case 'pubmed':
 				newState.pubmed = true
+				break
+			case 'bbc':
+				newState.bbc = true
 				break
 			default:
 				break
@@ -87,6 +92,7 @@ const JournalForm = () => {
 					<Form.Check value='nature' inline label="Nature" type='radio' checked={type.nature} onChange={handleType} />
 					<Form.Check value='ieee' inline label="IEEE" type='radio' checked={type.ieee} onChange={handleType} />
 					<Form.Check value='pubmed' inline label="PubMed" type='radio' checked={type.pubmed} onChange={handleType} />
+					<Form.Check value='bbc' inline label="BBC Breaking News" type='radio' checked={type.bbc} onChange={handleType} />
 				</Form.Group>
 
 				<ButtonWrapper>
